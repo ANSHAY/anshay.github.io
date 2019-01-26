@@ -18,8 +18,8 @@ font-family: 'Poppins', sans-serif;
 6.  Skill
 7.  Experience
 8.  Profiles
-9.  Portfolio
-10. Projects
+9.  projects
+10. portfolio
 11. Contact
 
 /*-------------------------------------
@@ -56,7 +56,7 @@ a,a:hover,a:active,a:focus {
 }
 h1,h2,h3,h4,h5,h6 {
 	margin: 0;
-	color:#cb5151;
+	color:#ff3e3e;
     font-size: 16px;
 	font-family: 'Poppins', sans-serif;
 	text-transform: capitalize;
@@ -200,7 +200,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #f91c3b;}
     content: " ";
     top:0;
     left:0;
-    background:rgba(30,30,30,0.4);
+    background:rgba(0,0,0,0.4);
     width:100%;
     height:100%;
 }
@@ -211,7 +211,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #f91c3b;}
     font-size: 54px;
     font-weight: 700;
     text-transform: uppercase;
-    line-height: 1.5;
+    line-height: 1;
 }
 .header-text h2 span {color: #f91c3b;}
 .header-text p {
@@ -228,9 +228,9 @@ nav.navbar.bootsnav .navbar-toggle i{color: #f91c3b;}
     line-height: 60px;
     border-radius: 3px;
     text-transform: capitalize;
-    color: #fff;
-    background: #111;
-    border:1px solid #111;
+    color: #f91c3b;
+    background: #000;
+    border:1px solid #000;
     box-shadow: 0 5px 20px rgba(0,0,0,.2);
     -webkit-transition: 0.3s linear;
     -moz-transition: 0.3s linear;
@@ -238,7 +238,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #f91c3b;}
     -o-transition: 0.3s linear;
     transition: 0.3s linear;
 }
-.header-text a:hover{ box-shadow: 0 5px 20px rgba(0,0,0,.4);background:#f91c3b;border: 1px solid #f91c3b;}
+.header-text a:hover{ box-shadow: 0 5px 20px rgba(0,0,0,.4);background:#f91c3b;border: 1px solid #f91c3b;color: #000;}
 /*.header-text-area*/
 
 /*-------------------------------------
@@ -318,7 +318,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #f91c3b;}
     text-align: center;
 }
 .about-list-icon ul li a i {
-    margin-left: 6px;
+    margin-left: 4px;
 }
 /*.ab-list-icon */
 
@@ -521,7 +521,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 --------------------------------------*/
 .profiles {
     padding:  50px 0 100px;
-    border:  1px solid #e5ebf2;
+    border:  1px solid #111;
 }
 
 .profiles-content {padding-top: 100px;}
@@ -592,14 +592,14 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 .single-profile:hover .profile-icon-name,.single-profile:hover .profile-txt a>i{color: #fff;}
 .single-profile:hover .profile-border {border:transparent;}
 /*-------------------------------------
-        9. Portfolio
+        9. projects
 --------------------------------------*/
-.portfolio {
+.projects {
     padding:  50px 0 100px;
-    border:  1px solid #e5ebf2;
+    border:  1px solid #111;
 }
 
-.portfolio-content {padding-top: 100px;}
+.projects-content {padding-top: 100px;}
 
 /* ---- .item ---- */
 .isotope:after {
@@ -668,17 +668,17 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 }/*.isotope-overlay*/
 
 /*-------------------------------------
-        10. projects
+        10. portfolio
 --------------------------------------*/
-.projects {padding-top: 50px;}
-.projects-area {
+.portfolio {padding-top: 50px;}
+.portfolio-area {
     display: flex;
     align-items: center;
     height: 250px;
 }
-.projects-area .item {padding: 0 25px;}
+.portfolio-area .item {padding: 0 25px;}
 
-.projects .projects-area .owl-carousel .owl-item img {
+.portfolio .portfolio-area .owl-carousel .owl-item img {
     display: block;
     width: 100%;
     height: auto;
@@ -818,7 +818,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     text-align: center;
     font-size: 20px;
     cursor: pointer;
-    color: #fff;
+    color: #000;
     background:#f91c3b;
 	border:1px solid #f91c3b;
 	border-radius:50%;
