@@ -1,0 +1,37 @@
+
+**Privacy Policy for CookNook**
+
+**Effective Date:** [Insert Date]
+
+At CookNook, we value your privacy. This Privacy Policy outlines how we handle your information when you use our app, including the use of Google AdMob for advertising.
+
+**1. Information We Collect**  
+CookNook does not collect personal information directly from users. However, when you use our app, Google AdMob may collect certain information to serve ads. This may include:
+
+- Device information (e.g., device type, operating system)
+- Usage data (e.g., how you interact with the app)
+- Advertising identifiers (e.g., IDFA for iOS, AAID for Android)
+
+**2. Use of Information**  
+The information collected by Google AdMob is used to serve personalized ads and measure ad performance. We do not have access to this data and do not use it for any purpose other than to provide a free app supported by ads.
+
+**3. Data Sharing**  
+CookNook does not share any personal information with third parties. However, Google AdMob may share information with its partners for advertising purposes. For more information on how Google uses your data, please refer to the Google Privacy Policy: [https://policies.google.com/privacy](https://policies.google.com/privacy).
+
+**4. User Rights**  
+As we do not collect personal data directly, we do not have specific user rights regarding data access or deletion. However, you can manage your ad preferences through your device settings.
+
+**5. Children's Privacy**  
+CookNook is not intended for children, and we do not knowingly collect any information from users under the age of 13. If you believe we have collected information from a child, please contact us.
+
+**6. Security**  
+While we do not collect personal information, we encourage users to take precautions to protect their information when using the app.
+
+**7. Contact Us**  
+If you have any questions about this Privacy Policy, please contact us at:  
+xernaitech@gmail.com
+
+**8. Changes to This Privacy Policy**  
+We may update this Privacy Policy from time to time. Any changes will be reflected in this document, and we encourage you to review it periodically.
+
+By using CookNook, you agree to the terms of this Privacy Policy.
