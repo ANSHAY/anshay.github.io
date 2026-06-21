@@ -83,6 +83,8 @@
 /* === Closing Rune === */
 .tavern__rune {
   font-family: var(--font-accent);
+  font-weight: 700;
+  text-shadow: var(--text-accent-shadow);
   font-size: var(--fs-sm);
   color: var(--text-muted);
   letter-spacing: 0.2em;
@@ -100,6 +102,8 @@
 
 .tavern__footer-text {
   font-family: var(--font-accent);
+  font-weight: 700;
+  text-shadow: var(--text-accent-shadow);
   font-size: var(--fs-xs);
   color: var(--text-muted);
   letter-spacing: 0.1em;

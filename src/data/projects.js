@@ -140,7 +140,7 @@ export const projects = [
     rarity: 'rare',
     stack: ['Flutter', 'Hive', 'Gemini'],
     metrics: 'Offline-first · Unstructured log analysis',
-    link: null,
+    link: 'https://play.google.com/store/apps/details?id=com.xernai.calox',
     company: 'Xern AI',
   },
   {
@@ -240,7 +240,7 @@ export const projects = [
     rarity: 'common',
     stack: ['Flutter', 'Gemini', 'Firebase'],
     metrics: 'Swipe-based meal planning',
-    link: null,
+    link: 'https://play.google.com/store/apps/details?id=com.xernai.cooknook',
     company: 'Xern AI',
   },
   {
@@ -254,7 +254,7 @@ export const projects = [
     rarity: 'common',
     stack: ['Flutter'],
     metrics: 'Pokemon-themed puzzle game',
-    link: null,
+    link: 'https://play.google.com/store/apps/details?id=com.xernai.eevolve',
     company: 'Xern AI',
   }
 ];

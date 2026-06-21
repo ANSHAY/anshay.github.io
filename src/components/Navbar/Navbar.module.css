@@ -53,6 +53,8 @@
 
 .nav__link {
   font-family: var(--font-accent);
+  font-weight: 700;
+  text-shadow: var(--text-accent-shadow);
   font-size: var(--fs-sm);
   color: var(--text-secondary);
   padding: 6px 12px;

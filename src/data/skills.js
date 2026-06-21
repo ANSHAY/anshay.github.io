@@ -13,7 +13,8 @@ export const skillClusters = [
       'GANs', 'Diffusion Models', 'Signal Processing',
       'EEG / BCI', 'Medical AI', 'Agentic AI',
       'LangChain', 'LangGraph', 'RAG',
-      'Gemini', 'MedGemma', 'HeAR',
+      'Gemini', 'Claude', 'GPT', 'MedGemma', 'HeAR',
+      'Prompt Engineering', 'Whisper', 'GenAI',
     ],
   },
   {

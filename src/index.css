@@ -41,6 +41,10 @@
   --text-bright: #f5eed6;
   --text-link: #c9a84c;
 
+  /* Accent text — brighter gold for MedievalSharp legibility on dark */
+  --text-accent: #ddc477;
+  --text-accent-shadow: 0 0 6px rgba(201, 168, 76, 0.25);
+
   /* === Accent Colors === */
   --gold: #c9a84c;
   --gold-bright: #ffd700;
@@ -277,9 +281,11 @@ ol {
   display: inline-block;
   font-family: var(--font-accent);
   font-size: var(--fs-sm);
-  color: var(--gold);
+  font-weight: 700;
+  color: var(--text-accent);
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  text-shadow: var(--text-accent-shadow);
   margin-bottom: var(--space-sm);
 }
 

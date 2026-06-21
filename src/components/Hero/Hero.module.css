@@ -95,11 +95,12 @@
 .summoning__incantation {
   font-family: var(--font-accent);
   font-size: var(--fs-sm);
-  color: var(--gold);
+  font-weight: 700;
+  color: var(--text-accent);
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  text-shadow: var(--text-accent-shadow);
   margin-bottom: var(--space-lg);
-  opacity: 0.8;
 }
 
 /* Main title */
@@ -170,9 +171,11 @@
 .summoning__stat-label {
   font-family: var(--font-accent);
   font-size: var(--fs-xs);
-  color: var(--text-muted);
+  font-weight: 700;
+  color: var(--text-secondary);
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  text-shadow: var(--text-accent-shadow);
   margin-top: 2px;
 }
 
@@ -199,10 +202,12 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-xs);
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-family: var(--font-accent);
   font-size: var(--fs-xs);
+  font-weight: 700;
   letter-spacing: 0.15em;
+  text-shadow: var(--text-accent-shadow);
   animation: float-slow 3s ease-in-out infinite;
 }
 

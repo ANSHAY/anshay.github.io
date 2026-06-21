@@ -140,6 +140,8 @@
 
 .log__role {
   font-family: var(--font-accent);
+  font-weight: 700;
+  text-shadow: var(--text-accent-shadow);
   font-size: var(--fs-sm);
   color: var(--gold);
   margin-top: 2px;
