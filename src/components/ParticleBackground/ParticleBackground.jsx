@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './ParticleBackground.module.css';
 
 /**
@@ -40,85 +40,86 @@ function createParticle(width, height) {
   };
 }
 
+function initCanvas(canvas, particlesRef) {
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+  canvas.style.width = `${width}px`;
+  canvas.style.height = `${height}px`;
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const count = width < 768 ? PARTICLE_CONFIG.mobileCount : PARTICLE_CONFIG.baseCount;
+  particlesRef.current = Array.from({ length: count }, () =>
+    createParticle(width, height)
+  );
+}
+
+function drawFrame(canvas, particles) {
+  const ctx = canvas.getContext('2d');
+  const width = parseInt(canvas.style.width) || window.innerWidth;
+  const height = parseInt(canvas.style.height) || window.innerHeight;
+
+  ctx.clearRect(0, 0, width, height);
+
+  for (let i = 0; i < particles.length; i++) {
+    const p = particles[i];
+    p.x += p.speedX;
+    p.y += p.speedY;
+    p.pulse += p.pulseSpeed;
+
+    // Wrap around screen edges
+    if (p.y < -10) {
+      p.y = height + 10;
+      p.x = Math.random() * width;
+    }
+    if (p.x < -10) p.x = width + 10;
+    if (p.x > width + 10) p.x = -10;
+
+    const currentOpacity = p.opacity * (0.5 + 0.5 * Math.sin(p.pulse));
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = p.color.replace(/[\d.]+\)$/, `${currentOpacity})`);
+    ctx.fill();
+
+    // Add subtle glow for larger particles
+    if (p.size > 2) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
+      ctx.fillStyle = p.color.replace(/[\d.]+\)$/, `${currentOpacity * 0.15})`);
+      ctx.fill();
+    }
+  }
+}
+
 export default function MagicParticles() {
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
   const animRef = useRef(null);
 
-  const init = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
-
-    const ctx = canvas.getContext('2d');
-    ctx.scale(dpr, dpr);
-
-    const count = width < 768 ? PARTICLE_CONFIG.mobileCount : PARTICLE_CONFIG.baseCount;
-    particlesRef.current = Array.from({ length: count }, () =>
-      createParticle(width, height)
-    );
-  }, []);
-
-  const animate = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    const width = canvas.style.width ? parseInt(canvas.style.width) : window.innerWidth;
-    const height = canvas.style.height ? parseInt(canvas.style.height) : window.innerHeight;
-
-    ctx.clearRect(0, 0, width, height);
-
-    for (const p of particlesRef.current) {
-      p.x += p.speedX;
-      p.y += p.speedY;
-      p.pulse += p.pulseSpeed;
-
-      // Wrap around screen edges
-      if (p.y < -10) {
-        p.y = height + 10;
-        p.x = Math.random() * width;
-      }
-      if (p.x < -10) p.x = width + 10;
-      if (p.x > width + 10) p.x = -10;
-
-      const currentOpacity = p.opacity * (0.5 + 0.5 * Math.sin(p.pulse));
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = p.color.replace(/[\d.]+\)$/, `${currentOpacity})`);
-      ctx.fill();
-
-      // Add subtle glow for larger particles
-      if (p.size > 2) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
-        ctx.fillStyle = p.color.replace(/[\d.]+\)$/, `${currentOpacity * 0.15})`);
-        ctx.fill();
-      }
-    }
-
-    animRef.current = requestAnimationFrame(animate);
-  }, []);
-
   useEffect(() => {
-    // Respect reduced motion preference
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced) return;
 
-    init();
-    animRef.current = requestAnimationFrame(animate);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    initCanvas(canvas, particlesRef);
+
+    function tick() {
+      drawFrame(canvas, particlesRef.current);
+      animRef.current = requestAnimationFrame(tick);
+    }
+
+    animRef.current = requestAnimationFrame(tick);
 
     const handleResize = () => {
-      init();
+      initCanvas(canvas, particlesRef);
     };
 
     window.addEventListener('resize', handleResize);
@@ -127,7 +128,7 @@ export default function MagicParticles() {
       if (animRef.current) cancelAnimationFrame(animRef.current);
       window.removeEventListener('resize', handleResize);
     };
-  }, [init, animate]);
+  }, []);
 
   return <canvas ref={canvasRef} className={styles.canvas} aria-hidden="true" />;
 }
