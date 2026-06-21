@@ -1,0 +1,244 @@
+.academies {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Two-column layout: Degrees + Achievements === */
+.academies__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+/* === Academy Card (Degree) === */
+.academy-card {
+  padding: var(--space-xl);
+  position: relative;
+}
+
+.academy-card__banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.academy-card__crest {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.12), rgba(139, 92, 246, 0.08));
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.academy-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.academy-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: 0.02em;
+}
+
+.academy-card__degree {
+  font-family: var(--font-accent);
+  font-size: var(--fs-sm);
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.academy-card__period {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  padding: 3px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* Thesis/Dissertation */
+.academy-card__thesis {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.academy-card__thesis-label {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Achievements list within academy card */
+.academy-card__achievements {
+  margin-top: var(--space-md);
+}
+
+.academy-card__achievement {
+  position: relative;
+  padding-left: var(--space-lg);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-xs);
+}
+
+.academy-card__achievement::before {
+  content: '✦';
+  position: absolute;
+  left: 2px;
+  color: var(--gold);
+  font-size: 0.7em;
+}
+
+/* === Trials Panel (Achievements) === */
+.trials {
+  padding: var(--space-xl);
+}
+
+.trials__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.trials__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.trial-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.01);
+  transition: all var(--transition-base);
+}
+
+.trial-item:hover {
+  border-color: var(--border-gold);
+  background: rgba(201, 168, 76, 0.03);
+}
+
+.trial-item__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.trial-item__content {
+  flex: 1;
+}
+
+.trial-item__label {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: 0.03em;
+}
+
+.trial-item__detail {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* === Certifications === */
+.certifications {
+  margin-top: var(--space-2xl);
+}
+
+.certifications__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.cert-card {
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--fs-sm);
+  transition: all var(--transition-base);
+}
+
+.cert-card__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.cert-card__issuer {
+  font-family: var(--font-accent);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.cert-card__link {
+  font-size: var(--fs-xs);
+  color: var(--gold);
+  margin-top: 4px;
+  display: inline-block;
+  transition: color var(--transition-fast);
+}
+
+.cert-card__link:hover {
+  color: var(--gold-bright);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .academies__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academy-card__banner {
+    flex-wrap: wrap;
+  }
+}
