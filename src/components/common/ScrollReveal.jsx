@@ -1,36 +1,43 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 /**
- * Wraps children with scroll-triggered reveal animation.
- * Uses `whileInView` with configurable direction.
+ * Scroll-triggered reveal animation wrapper.
+ * Elements fade and rise into view with a magical entrance.
+ *
+ * @param {object} props
+ * @param {React.ReactNode} props.children
+ * @param {number} [props.delay=0] - Animation delay in seconds
+ * @param {string} [props.direction='up'] - Direction: 'up' | 'down' | 'left' | 'right'
+ * @param {number} [props.distance=40] - Distance in pixels for the entrance
  */
 export default function ScrollReveal({
   children,
-  direction = 'up',
   delay = 0,
-  duration = 0.6,
-  className = '',
-  once = true,
+  direction = 'up',
+  distance = 40,
 }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+
   const directionMap = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: 40, y: 0 },
-    right: { x: -40, y: 0 },
+    up: { y: distance },
+    down: { y: -distance },
+    left: { x: distance },
+    right: { x: -distance },
   };
 
-  const offset = directionMap[direction] || directionMap.up;
+  const initialOffset = directionMap[direction] || directionMap.up;
 
   return (
     <motion.div
-      className={className}
-      initial={{ opacity: 0, ...offset }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once, margin: '-60px' }}
+      ref={ref}
+      initial={{ opacity: 0, ...initialOffset }}
+      animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
       transition={{
-        duration,
+        duration: 0.7,
         delay,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.25, 0.46, 0.45, 0.94],
       }}
     >
       {children}

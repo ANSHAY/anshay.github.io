@@ -1,0 +1,117 @@
+.bards {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Testimonials Grid === */
+.bards__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* === Dialogue Box (NPC Testimonial) === */
+.dialogue {
+  padding: var(--space-xl);
+  position: relative;
+}
+
+/* NPC speech indicator */
+.dialogue::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 40px;
+  width: 16px;
+  height: 16px;
+  background: var(--surface-parchment);
+  border-right: 1px solid var(--border-gold);
+  border-bottom: 1px solid var(--border-gold);
+  transform: rotate(45deg);
+}
+
+/* Quote text */
+.dialogue__quote {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+  position: relative;
+  padding-left: var(--space-lg);
+}
+
+.dialogue__quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 0;
+  top: -8px;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--gold);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+/* NPC Identity */
+.dialogue__npc {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.dialogue__npc-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.dialogue__npc-info {
+  flex: 1;
+}
+
+.dialogue__npc-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: 0.03em;
+}
+
+.dialogue__npc-role {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  text-shadow: var(--text-accent-shadow);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.dialogue__npc-guild {
+  font-size: var(--fs-xs);
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+.dialogue__date {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .bards__grid {
+    grid-template-columns: 1fr;
+  }
+}

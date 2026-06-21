@@ -1,0 +1,224 @@
+.log {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Timeline Container === */
+.log__timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Central glowing line */
+.log__timeline::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--gold) 10%,
+    var(--gold) 90%,
+    transparent
+  );
+  opacity: 0.3;
+}
+
+/* === Timeline Entry === */
+.log__entry {
+  position: relative;
+  padding-left: 70px;
+  margin-bottom: var(--space-2xl);
+}
+
+.log__entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Node on the timeline */
+.log__node {
+  position: absolute;
+  left: 18px;
+  top: 24px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--gold);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+}
+
+.log__node::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.6;
+  transition: opacity var(--transition-base);
+}
+
+.log__entry:hover .log__node {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.4);
+}
+
+.log__entry:hover .log__node::after {
+  opacity: 1;
+}
+
+/* Node type variants */
+.log__node--founder {
+  border-color: var(--rarity-legendary);
+}
+
+.log__node--founder::after {
+  background: var(--rarity-legendary);
+}
+
+.log__node--corporate {
+  border-color: var(--mana-cyan);
+}
+
+.log__node--corporate::after {
+  background: var(--mana-cyan);
+}
+
+.log__node--government {
+  border-color: var(--xp-green);
+}
+
+.log__node--government::after {
+  background: var(--xp-green);
+}
+
+.log__node--contract {
+  border-color: var(--ember-orange);
+}
+
+.log__node--contract::after {
+  background: var(--ember-orange);
+}
+
+.log__node--internship {
+  border-color: var(--text-muted);
+}
+
+.log__node--internship::after {
+  background: var(--text-muted);
+}
+
+/* === Entry Card === */
+.log__card {
+  padding: var(--space-lg) var(--space-xl);
+}
+
+.log__card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.log__guild-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: 0.02em;
+}
+
+.log__role {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  text-shadow: var(--text-accent-shadow);
+  font-size: var(--fs-sm);
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.log__period {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Highlights */
+.log__highlights {
+  margin-bottom: var(--space-md);
+}
+
+.log__highlight {
+  position: relative;
+  padding-left: var(--space-lg);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-xs);
+}
+
+.log__highlight::before {
+  content: '›';
+  position: absolute;
+  left: 6px;
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* Tech stack */
+.log__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.log__tech-tag {
+  font-size: var(--fs-xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .log__timeline::before {
+    left: 18px;
+  }
+
+  .log__entry {
+    padding-left: 50px;
+  }
+
+  .log__node {
+    left: 8px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .log__card {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .log__card-header {
+    flex-direction: column;
+  }
+}

@@ -1,19 +1,20 @@
 import { motion, useScroll, useSpring } from 'framer-motion';
-import ParticleBackground from './components/ParticleBackground/ParticleBackground';
+import MagicParticles from './components/ParticleBackground/ParticleBackground';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
-import FeaturedProjects from './components/FeaturedProjects/FeaturedProjects';
-import ProjectGrid from './components/ProjectGrid/ProjectGrid';
-import Timeline from './components/Timeline/Timeline';
-import Skills from './components/Skills/Skills';
-import Education from './components/Education/Education';
-import Testimonials from './components/Testimonials/Testimonials';
-import Contact from './components/Contact/Contact';
+import Quests from './components/Quests/Quests';
+import AdventurersLog from './components/AdventurersLog/AdventurersLog';
+import Grimoire from './components/Grimoire/Grimoire';
+import Academies from './components/Academies/Academies';
+import BardsTales from './components/BardsTales/BardsTales';
+import Tavern from './components/Tavern/Tavern';
 
 /**
- * Root application component.
- * Single-page layout with scroll-driven sections and a top progress bar.
+ * Root application component — Isekai Fantasy RPG Portfolio.
+ *
+ * Single-page layout with scroll-driven sections, magical particle
+ * background, and a gold-themed progress bar at the top.
  */
 export default function App() {
   const { scrollYProgress } = useScroll();
@@ -25,7 +26,7 @@ export default function App() {
 
   return (
     <>
-      {/* Scroll progress bar */}
+      {/* Scroll progress bar — gold gradient */}
       <motion.div
         style={{
           scaleX,
@@ -34,25 +35,24 @@ export default function App() {
           left: 0,
           right: 0,
           height: '2px',
-          background: 'linear-gradient(90deg, #8b5cf6, #06b6d4)',
+          background: 'linear-gradient(90deg, #c9a84c, #ffd700, #c9a84c)',
           transformOrigin: '0%',
           zIndex: 200,
         }}
       />
 
-      <ParticleBackground />
+      <MagicParticles />
       <Navbar />
 
       <main>
         <Hero />
         <About />
-        <FeaturedProjects />
-        <ProjectGrid />
-        <Timeline />
-        <Skills />
-        <Education />
-        <Testimonials />
-        <Contact />
+        <Quests />
+        <AdventurersLog />
+        <Grimoire />
+        <Academies />
+        <BardsTales />
+        <Tavern />
       </main>
     </>
   );

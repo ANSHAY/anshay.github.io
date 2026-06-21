@@ -1,137 +1,199 @@
-.hero {
+.summoning {
   position: relative;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--nav-height) var(--space-lg) var(--space-2xl);
   text-align: center;
+  padding: var(--space-2xl);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* === Enchanted Portal Background === */
+.summoning__portal {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   overflow: hidden;
 }
 
-.hero__content {
+/* Radial magic glow behind the title */
+.summoning__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(201, 168, 76, 0.08) 0%,
+    rgba(139, 92, 246, 0.04) 40%,
+    transparent 70%
+  );
+  animation: portal-pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Rotating rune circle */
+.summoning__rune-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(201, 168, 76, 0.08);
+  border-radius: 50%;
+  animation: rune-spin 60s linear infinite;
+  pointer-events: none;
+}
+
+.summoning__rune-circle::before {
+  content: '';
+  position: absolute;
+  inset: 30px;
+  border: 1px solid rgba(139, 92, 246, 0.06);
+  border-radius: 50%;
+}
+
+.summoning__rune-circle::after {
+  content: '';
+  position: absolute;
+  inset: 60px;
+  border: 1px dashed rgba(0, 212, 255, 0.05);
+  border-radius: 50%;
+}
+
+/* Rune markers on the outer circle */
+.summoning__rune-marker {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.4;
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.4);
+}
+
+.summoning__rune-marker:nth-child(1) { top: -4px; left: 50%; transform: translateX(-50%); }
+.summoning__rune-marker:nth-child(2) { bottom: -4px; left: 50%; transform: translateX(-50%); }
+.summoning__rune-marker:nth-child(3) { left: -4px; top: 50%; transform: translateY(-50%); }
+.summoning__rune-marker:nth-child(4) { right: -4px; top: 50%; transform: translateY(-50%); }
+
+/* === Content === */
+.summoning__content {
   position: relative;
-  z-index: 1;
-  max-width: 900px;
+  z-index: 2;
+  max-width: 800px;
 }
 
-.hero__greeting {
-  font-family: var(--font-mono);
+/* Decorative "summoning text" above title */
+.summoning__incantation {
+  font-family: var(--font-accent);
   font-size: var(--fs-sm);
-  color: var(--accent-violet);
-  letter-spacing: 0.1em;
-  margin-bottom: var(--space-md);
-}
-
-.hero__name {
-  font-size: var(--fs-hero);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  background: var(--gradient-hero-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-weight: 700;
+  color: var(--text-accent);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-shadow: var(--text-accent-shadow);
   margin-bottom: var(--space-lg);
 }
 
-.hero__tagline {
-  font-size: var(--fs-xl);
-  font-weight: 400;
-  color: var(--text-secondary);
-  line-height: 1.4;
-  margin-bottom: var(--space-sm);
+/* Main title */
+.summoning__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-lg);
 }
 
-.hero__tagline strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.hero__subtitle {
-  font-size: var(--fs-md);
-  color: var(--text-muted);
-  max-width: 640px;
-  margin: 0 auto var(--space-xl);
-  line-height: 1.6;
-}
-
-.hero__actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-  margin-bottom: var(--space-3xl);
-}
-
-.hero__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: 12px 28px;
-  font-size: var(--fs-sm);
-  font-weight: 600;
-  border-radius: var(--radius-full);
-  transition: all var(--transition-base);
-}
-
-.hero__btn--primary {
-  background: var(--gradient-hero);
-  color: #fff;
-  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
-}
-
-.hero__btn--primary:hover {
-  box-shadow: 0 6px 30px rgba(139, 92, 246, 0.5);
-  transform: translateY(-2px);
-}
-
-.hero__btn--secondary {
-  background: var(--surface-glass);
-  border: 1px solid var(--border-glass);
-  color: var(--text-primary);
-}
-
-.hero__btn--secondary:hover {
-  background: var(--surface-glass-hover);
-  border-color: var(--border-glass-hover);
-  transform: translateY(-2px);
-}
-
-/* Stats ribbon */
-.hero__stats {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2xl);
-  flex-wrap: wrap;
-}
-
-.hero__stat {
-  text-align: center;
-}
-
-.hero__stat-value {
-  font-size: var(--fs-2xl);
-  font-weight: 800;
-  background: var(--gradient-hero-text);
+.summoning__title-name {
+  display: block;
+  background: var(--gradient-gold);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  line-height: 1.2;
+  filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.3));
 }
 
-.hero__stat-label {
+/* Class/title subtitle */
+.summoning__class {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-md);
+}
+
+.summoning__class-highlight {
+  color: var(--mana-cyan);
+  text-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+}
+
+/* Tagline / lore snippet */
+.summoning__tagline {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  max-width: 550px;
+  margin: 0 auto var(--space-2xl);
+  line-height: 1.8;
+}
+
+/* Stats ribbon */
+.summoning__stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.summoning__stat {
+  text-align: center;
+}
+
+.summoning__stat-value {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--gold-bright);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.summoning__stat-label {
+  font-family: var(--font-accent);
   font-size: var(--fs-xs);
-  color: var(--text-muted);
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  text-shadow: var(--text-accent-shadow);
   margin-top: 2px;
 }
 
+/* CTA Button */
+.summoning__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.summoning__cta-arrow {
+  display: inline-block;
+  animation: float 2.5s ease-in-out infinite;
+  font-size: 1.2em;
+}
+
 /* Scroll indicator */
-.hero__scroll {
+.summoning__scroll-hint {
   position: absolute;
   bottom: var(--space-xl);
   left: 50%;
@@ -139,34 +201,58 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-sm);
-  color: var(--text-muted);
+  gap: var(--space-xs);
+  color: var(--text-secondary);
+  font-family: var(--font-accent);
   font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-shadow: var(--text-accent-shadow);
+  animation: float-slow 3s ease-in-out infinite;
 }
 
-.hero__scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(
-    to bottom,
-    var(--accent-violet),
-    transparent
-  );
-  animation: scrollPulse 2s ease-in-out infinite;
+.summoning__scroll-rune {
+  font-size: 1.5rem;
+  color: var(--gold);
+  opacity: 0.5;
 }
 
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
-  50% { opacity: 1; transform: scaleY(1); }
+/* === Animations === */
+@keyframes portal-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 1;
+  }
 }
 
+/* === Responsive === */
 @media (max-width: 768px) {
-  .hero__stats {
+  .summoning {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .summoning__glow {
+    width: 350px;
+    height: 350px;
+  }
+
+  .summoning__rune-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .summoning__stats {
     gap: var(--space-lg);
   }
-  .hero__actions {
+}
+
+@media (max-width: 480px) {
+  .summoning__stats {
     flex-direction: column;
-    align-items: stretch;
-    padding: 0 var(--space-lg);
+    gap: var(--space-md);
   }
 }

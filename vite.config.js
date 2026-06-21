@@ -7,11 +7,10 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'terser',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'framer': ['framer-motion'],
+        manualChunks(id) {
+          if (id.includes('framer-motion')) return 'framer';
         },
       },
     },
