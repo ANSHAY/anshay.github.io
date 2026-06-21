@@ -60,11 +60,11 @@ graph TD
 
 | Period | Company | Role | Key Tech | Highlights |
 |--------|---------|------|----------|------------|
-| Oct 2025 - Jan 2026 | Stealth AI Venture | Lead AI Systems Architect | AI, Python | <500ms Voice-to-Action pipeline, fault-tolerant state machine, 99.9% uptime microservices |
+| Oct 2025 - Jun 2026 | Stealth AI Venture | Lead AI Systems Architect | AI, Python | <500ms Voice-to-Action pipeline, fault-tolerant state machine, 99.9% uptime microservices |
 | Jun 2025 - Sep 2025 | SchoolBook.AI | Co-Founder & Lead AI Architect | AI, Python | Multimodal RAG Pipeline, LangGraph autonomous agents, full-stack GenAI deployment |
 | Apr 2023 - Mar 2025 | Qualcomm | Senior Lead Software Engineer | AI, Python, C++ | 96% GPU latency reduction (35ms→1.3ms), HDR flows for Premium Tier Snapdragon |
 | Sep 2022 - Apr 2023 | Calpion | Lead Software Engineer | C++, Python | CT scan artery segmentation, protein mutation CNN models, 30-50% AWS pipeline speedup |
-| Feb 2021 - Mar 2023 | GreyscaleAI | Software Engineer | C++, Python, OpenCV | Multi-modal X-Ray+RGB inspection (Nestle), led team of 8, embedded UI, 50+ features/week |
+| Feb 2021 - Sep 2022 | GreyscaleAI | Software Engineer | C++, Python, OpenCV | Multi-modal X-Ray+RGB inspection (Nestle), led team of 8, embedded UI, 50+ features/week |
 | Nov 2021 - Jan 2022 | Canairy (High Alpha) | Consultant | Python, OpenCV, ROS | Cattle segmentation FPN (0.96 IOU), LIDAR depth, ROS channels |
 | Aug 2018 - Present | Xern AI | Founder | Flutter, Python, AI | BCI, Autodub, Play Store apps, multiple AI ventures |
 | Aug 2017 - Jul 2018 | Nvidia | System Software Engineer | C++, Python | Tegra Camera imaging stack, lens shading, Bayer demosaicing |
@@ -104,7 +104,7 @@ graph TD
 
 #### Vitalis (MedGemma Impact Challenge)
 - **Type**: AI Health Screening App (Stealth-Mode Health-Tech)
-- **Stack**: Flutter (Clean Architecture + Riverpod + GoRouter), FastAPI, Google Cloud Run
+- **Stack**: Flutter (Clean Architecture + Riverpod + GoRouter), FastAPI
 - **AI Models**: HeAR (Health Acoustic Representations), MedSigLIP, Gemini
 - **Features**: 8 vital signs — Neuro-Tremor (Parkinson's), Neuro-Chat, Anemia-Eye, Jaundice-Cam, Oral-Cancer, Cough-Check (TB), Cardio-Vision (rPPG), Alzheimer-Voice
 - **Portfolio Angle**: Founder experience, medical AI, Kaggle competition
@@ -125,7 +125,7 @@ graph TD
 #### Venom-to-Drug Discovery
 - **Type**: Computational Drug Discovery
 - **Stack**: Python, RFDiffusion, ProteinMPNN
-- **Details**: Pipeline converting venom compounds to therapeutic drugs. Phases: analysis → backbone generation → protein sequence design. Ran 100-design pipelines.
+- **Details**: Pipeline converting venom compounds to therapeutic drugs. Phases: analysis → backbone generation → protein sequence design. Ran 1000-design pipelines.
 - **Repo**: /run/media/xarc/Git/Github/venom_to_drug
 
 ### 🤖 AI Agents & Voice
@@ -220,7 +220,7 @@ Python, C++, JavaScript, Dart
 - React, Vite (web)
 
 ### Backend/Infrastructure
-- FastAPI, Google Cloud Run, Supabase, Firebase
+- FastAPI, Supabase, Firebase
 - WebSockets, MQTT, Embedded Systems
 - Docker, Containerized Microservices
 - PostgreSQL, SQLite, Hive (NoSQL), Vector DBs

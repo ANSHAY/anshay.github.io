@@ -38,7 +38,7 @@ export const projects = [
     category: CATEGORIES.HEALTHTECH,
     priority: 1,
     rarity: 'legendary',
-    stack: ['Flutter', 'FastAPI', 'MedGemma', 'HeAR', 'MedSigLIP', 'Gemini', 'Google Cloud Run'],
+    stack: ['Flutter', 'FastAPI', 'MedGemma', 'HeAR', 'MedSigLIP', 'Gemini'],
     metrics: '8 vital signs · 3 AI models · MedGemma Impact Challenge',
     link: null,
     company: 'Xern AI',
@@ -52,7 +52,7 @@ export const projects = [
     category: CATEGORIES.AGENTS,
     priority: 1,
     rarity: 'legendary',
-    stack: ['Python', 'Gemini 1.5 Flash', 'faster-whisper', 'edge-tts', 'openwakeword', 'FFMPEG'],
+    stack: ['Python', 'Gemini 2.5 Flash', 'faster-whisper', 'edge-tts', 'openwakeword', 'FFMPEG'],
     metrics: '<500ms latency · Wake word detection · Meeting summaries',
     link: null,
     company: 'Xern AI',
@@ -81,7 +81,7 @@ export const projects = [
     priority: 1,
     rarity: 'legendary',
     stack: ['Python', 'RFDiffusion', 'ProteinMPNN', 'Molecular Docking'],
-    metrics: '100-design pipeline · Venom → therapeutic drugs',
+    metrics: '1000-design pipeline · Venom → therapeutic drugs',
     link: null,
     company: 'Xern AI',
   },
@@ -256,21 +256,7 @@ export const projects = [
     metrics: 'Pokemon-themed puzzle game',
     link: null,
     company: 'Xern AI',
-  },
-  {
-    id: 'life-os',
-    title: 'Life OS',
-    subtitle: 'AI-Integrated Knowledge System',
-    description:
-      'Comprehensive personal operating system in Obsidian with AI integrations, custom CSS, plugin setups, GitHub sync, and 8+ months of daily structured notes.',
-    category: CATEGORIES.CONSUMER,
-    priority: 3,
-    rarity: 'common',
-    stack: ['Obsidian', 'Markdown', 'Dataview', 'Templater'],
-    metrics: '8+ months daily notes · AI integrations',
-    link: null,
-    company: 'Personal',
-  },
+  }
 ];
 
 export const featuredProjects = projects.filter((p) => p.priority === 1);

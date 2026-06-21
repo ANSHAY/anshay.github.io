@@ -10,14 +10,14 @@ export const experience = [
     id: 'stealth',
     company: 'Stealth AI Venture',
     role: 'Lead AI Systems Architect',
-    period: 'Oct 2025 - Jan 2026',
+    period: 'Oct 2025 - Jun 2026',
     type: 'startup',
     highlights: [
       'Architected sub-500ms Voice-to-Action pipeline for real-time AI agent system',
       'Designed fault-tolerant state machine for multi-turn voice conversations',
       'Built containerized microservices achieving 99.9% uptime',
     ],
-    tech: ['Python', 'Gemini 1.5 Flash', 'faster-whisper', 'edge-tts', 'WebSocket', 'Docker'],
+    tech: ['Python', 'Gemini 2.5 Flash', 'faster-whisper', 'edge-tts', 'WebSocket', 'Docker'],
   },
   {
     id: 'schoolbook',
@@ -48,8 +48,8 @@ export const experience = [
   {
     id: 'calpion',
     company: 'Calpion',
-    role: 'Lead Software Engineer',
-    period: 'Sep 2022 - Apr 2023',
+    role: 'Consultant',
+    period: 'Sep 2022 - Mar 2023',
     type: 'corporate',
     highlights: [
       'Built CT scan artery segmentation pipeline for medical imaging',
@@ -62,7 +62,7 @@ export const experience = [
     id: 'greyscale',
     company: 'GreyscaleAI',
     role: 'Software Engineer',
-    period: 'Feb 2021 - Mar 2023',
+    period: 'Feb 2021 - Sep 2022',
     type: 'corporate',
     highlights: [
       'Built multi-modal X-Ray + RGB inspection system for Nestle',

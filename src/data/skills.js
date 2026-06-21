@@ -40,7 +40,7 @@ export const skillClusters = [
       'FastAPI', 'Node.js', 'Supabase', 'Firebase',
       'PostgreSQL', 'SQLite', 'Vector DBs', 'REST APIs',
       'Docker', 'Linux', 'Git', 'CI/CD',
-      'GitHub Actions', 'Google Cloud Run',
+      'GitHub Actions',
     ],
   },
   {
