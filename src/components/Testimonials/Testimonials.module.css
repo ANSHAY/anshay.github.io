@@ -1,0 +1,63 @@
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.card {
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  background: var(--surface-glass);
+  border: 1px solid var(--border-glass);
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  background: var(--surface-glass-hover);
+  border-color: var(--border-glass-hover);
+}
+
+.card__quote-icon {
+  font-size: 48px;
+  line-height: 1;
+  background: var(--gradient-hero-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.3;
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-lg);
+  pointer-events: none;
+}
+
+.card__text {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.card__author {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__name {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card__role {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .testimonials { grid-template-columns: 1fr; }
+}

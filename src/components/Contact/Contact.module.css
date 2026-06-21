@@ -1,0 +1,118 @@
+.contact {
+  text-align: center;
+}
+
+.contact__cta {
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.contact__desc {
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  max-width: 550px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.contact__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3xl);
+}
+
+.contact__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 14px 32px;
+  font-size: var(--fs-base);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.contact__btn--primary {
+  background: var(--gradient-hero);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+.contact__btn--primary:hover {
+  box-shadow: 0 6px 30px rgba(139, 92, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.contact__btn--secondary {
+  background: var(--surface-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+}
+
+.contact__btn--secondary:hover {
+  background: var(--surface-glass-hover);
+  border-color: var(--border-glass-hover);
+  transform: translateY(-2px);
+}
+
+/* Social links */
+.contact__socials {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-3xl);
+}
+
+.contact__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.contact__social:hover {
+  background: var(--accent-violet-dim);
+  border-color: var(--accent-violet);
+  color: var(--accent-violet);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow-violet);
+}
+
+/* Footer */
+.footer {
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--border-glass);
+  text-align: center;
+}
+
+.footer__text {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.footer__text a {
+  color: var(--accent-violet);
+  transition: color var(--transition-fast);
+}
+
+.footer__text a:hover {
+  color: var(--accent-cyan);
+}
+
+@media (max-width: 640px) {
+  .contact__actions {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 var(--space-lg);
+  }
+}
