@@ -12,7 +12,7 @@ import { profile } from '../../data/profile';
 
 const STATS = [
   { value: '10+', label: 'Years' },
-  { value: '5+', label: 'Products' },
+  { value: '15+', label: 'Products' },
   { value: '8', label: 'Guilds' },
 ];
 
