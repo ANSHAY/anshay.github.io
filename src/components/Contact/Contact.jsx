@@ -1,4 +1,5 @@
-import { Mail, Download, Linkedin, Github, Code2 } from 'lucide-react';
+import { Mail, Download, Code2 } from 'lucide-react';
+import { GitHubIcon, LinkedInIcon } from '../common/BrandIcons';
 import ScrollReveal from '../common/ScrollReveal';
 import styles from './Contact.module.css';
 
@@ -45,7 +46,7 @@ export default function Contact() {
                 className={styles.contact__social}
                 aria-label="LinkedIn"
               >
-                <Linkedin size={20} />
+                <LinkedInIcon size={20} />
               </a>
               <a
                 href="https://github.com/anshay"
@@ -54,7 +55,7 @@ export default function Contact() {
                 className={styles.contact__social}
                 aria-label="GitHub"
               >
-                <Github size={20} />
+                <GitHubIcon size={20} />
               </a>
               <a
                 href="https://leetcode.com/u/Xarc/"

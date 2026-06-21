@@ -1,4 +1,5 @@
-import { Linkedin, Github, Mail, Code2 } from 'lucide-react';
+import { Mail, Code2 } from 'lucide-react';
+import { GitHubIcon, LinkedInIcon } from '../common/BrandIcons';
 import SectionHeader from '../common/SectionHeader';
 import ScrollReveal from '../common/ScrollReveal';
 import styles from './About.module.css';
@@ -67,7 +68,7 @@ export default function About() {
                   className={styles.about__social}
                   aria-label="LinkedIn profile"
                 >
-                  <Linkedin size={16} />
+                  <LinkedInIcon size={16} />
                   LinkedIn
                 </a>
                 <a
@@ -77,7 +78,7 @@ export default function About() {
                   className={styles.about__social}
                   aria-label="GitHub profile"
                 >
-                  <Github size={16} />
+                  <GitHubIcon size={16} />
                   GitHub
                 </a>
                 <a
