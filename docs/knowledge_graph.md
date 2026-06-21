@@ -7,20 +7,28 @@ Personal portfolio website for **Anshay Agarwal** — an AI R&D Engineer, Founde
 
 ```mermaid
 graph TD
-    subgraph "Current State"
-        OLD[index.html - Bootstrap 4.4.1]
-        OLD --> CSS_OLD[bootstrap-4.4.1.css]
-        OLD --> JS_OLD[jQuery 3.5 + Popper + Bootstrap JS]
-        OLD --> IMG[pic.jpg + placeholder GIFs]
-        OLD --> RESUME[Resume_Anshay.pdf / CV_Anshay.pdf]
+    subgraph "Isekai Fantasy RPG Portfolio"
+        VITE[Vite 8 Dev Server] --> REACT[React 19]
+        REACT --> FM[Framer Motion 12]
+        REACT --> HERO[Hero: The Summoning]
+        REACT --> ABOUT[About: Character Lore]
+        REACT --> QUESTS[Projects: Epic Quests]
+        REACT --> LOG[Experience: Adventurer's Log]
+        REACT --> GRIMOIRE[Skills: Magic Grimoire]
+        REACT --> ACADEMIES[Education: Arcane Academies]
+        REACT --> BARDS[Testimonials: Bards' Tales]
+        REACT --> TAVERN[Contact: Join the Party]
+        REACT --> PARTICLES[MagicParticles Canvas]
+        REACT --> SHARED[RPGPanel / SectionHeader / ScrollReveal]
     end
 
-    subgraph "Target State - Fantasy RPG UI"
-        VITE[Vite Dev Server] --> REACT[React 18+]
-        REACT --> FM[Framer Motion - Parallax/Magic]
-        REACT --> ROUTER[React Router - SPA Sections]
-        REACT --> DESIGN[Game UI / Parchment / Runes]
-        REACT --> THEME[Isekai RPG Theme]
+    subgraph "Data Layer"
+        PROFILE[profile.js] --> ABOUT
+        PROJECTS[projects.js] --> QUESTS
+        EXPERIENCE[experience.js] --> LOG
+        SKILLS[skills.js] --> GRIMOIRE
+        EDUCATION[education.js] --> ACADEMIES
+        TESTIMONIALS[testimonials.js] --> BARDS
     end
 ```
 
@@ -222,29 +230,34 @@ Python, C++, JavaScript, Dart
 - GPU Programming (OpenGL, CUDA)
 - Blender, Unity, MATLAB, Qt, KiCAD
 
-## 9. Design Decisions (v2: Fantasy RPG / Isekai)
+## 9. Design Decisions (v2: Fantasy RPG / Isekai — IMPLEMENTED)
 
-### Decision 1: Tech Stack & Overhaul Aesthetics
-- **React + Vite + Framer Motion**: Maintained for UI animations, but repurchased for gaming elements.
-- Abandoned the "Neural Cosmos / Dark Lustrous" theme.
-- **New Theme**: Immersive Isekai / Fantasy RPG.
-- **Goal**: Make the user feel like they are stepping into a game world. High creativity, magical elements, parchment textures, and glowing HUDs.
+### Decision 1: Tech Stack
+- **React 19 + Vite 8 + Framer Motion 12**: Core stack.
+- **CSS Modules**: Per-component styling with global RPG design tokens.
+- **No external CSS framework**: Pure custom CSS for maximum fantasy UI control.
 
-### Decision 2: Thematic Mapping
-- **Hero** → "The Summoning / Title Screen"
-- **About** → "Character Lore / Stats"
-- **Projects** → "Epic Quests / Inventory"
-- **Experience** → "The Adventurer's Log"
-- **Skills** → "Magic Grimoire / Skill Tree"
-- **Education** → "Arcane Academies & Trials"
-- **Testimonials** → "Bards' Tales / NPC Dialogue"
-- **Contact** → "Tavern Notice Board"
+### Decision 2: Design System
+- **Palette**: Enchanted dark (gold #c9a84c, parchment #e8dcc4, mana-cyan #00d4ff, health-red #e74c3c, rune-violet #8b5cf6).
+- **Typography**: Cinzel Decorative (display), Cinzel (headings), MedievalSharp (accents), Inter (body), JetBrains Mono (code/stats).
+- **Components**: RPGPanel (ornate gold borders), stat-bars (HP/MP style), rarity badges (legendary/epic/rare/common), RPG buttons.
+
+### Decision 3: Thematic Mapping (IMPLEMENTED)
+- **Hero** → "The Summoning" (rotating rune circle portal, gold gradient name)
+- **About** → "Character Lore" (RPG stat bars INT/WIS/DEX/STR/CHA/CON)
+- **Projects** → "Epic Quests" (rarity-colored quest cards with filters)
+- **Experience** → "The Adventurer's Log" (vertical timeline, type-colored nodes)
+- **Skills** → "Magic Grimoire" (spell schools with glow-on-hover tags)
+- **Education** → "Arcane Academies & Trials" (academy crests, trial items)
+- **Testimonials** → "Bards' Tales" (NPC dialogue boxes)
+- **Contact** → "Join the Party" (tavern notice board, 'Send a Raven')
 
 ## 10. Current State
-- **Phase**: Data Auditing & Theme Redesign (v2)
-- **Status**: Halted implementation of old theme.
-- **Next**: Fix all factual inaccuracies in data files (`education.js`, `experience.js`, `skills.js`, etc.) before building the Fantasy RPG UI.
-- **Formatting**: Must fix incorrect usage of em dashes across all data.
+- **Phase**: Implementation Complete (Phase 4)
+- **Status**: All 8 sections implemented with Fantasy RPG theme.
+- **Branch**: `fantasy_build` (12 commits)
+- **Build**: Clean (287ms, 0 ESLint errors)
+- **Next**: Visual QA in browser, then merge to main.
 
 ## 11. LinkedIn Testimonials (⚠️ MISSING TESTIMONIALS TO BE RESTORED)
 *(The following were included, but more exist behind auth wall that need to be restored to the codebase.)*
@@ -326,32 +339,43 @@ Python, C++, JavaScript, Dart
 | **v1** | Keep photo, remove phone number, use tinyurl for apps, include novel, no Google Analytics, remove robotics/self-driving certs. |
 | **v2** | UI is uncreative/childish. **Pivot to Isekai/Fantasy RPG theme.** Remove photo. Remove LeetCode. Massive data inaccuracies reported across education, experience, achievements, and skills. Implementation halted to fix data first. |
 
-## 17. File Structure (Current)
+## 17. File Structure (Current — Fantasy RPG Build)
 ```
 anshay.github.io/
-├── index.html          (407 lines, Bootstrap 4.4.1 — to be replaced)
-├── css/
-│   └── bootstrap-4.4.1.css
-├── js/
-│   ├── jquery-3.5.0.min.js
-│   ├── popper.min.js
-│   └── bootstrap-4.4.1.js
-├── images/
-│   ├── pic.jpg          (profile photo, 132KB)
-│   ├── 115X115.gif
-│   └── 300X200.gif
-├── assets/
-│   ├── css/
-│   ├── download/
-│   │   ├── Resume_Anshay.pdf
-│   │   ├── CV_Anshay.pdf
-│   │   ├── Resume_Anshay.docx
-│   │   ├── AI/
-│   │   └── MedTech/
-│   └── privacy_policies/
-├── docs/               (NEW — knowledge graph)
-├── .gitignore
-├── .gitattributes
-├── LICENSE
-└── readme.md
+├── index.html               (Vite entry, Cinzel/MedievalSharp fonts, SEO meta)
+├── vite.config.js           (Vite 8 config, framer-motion code-split)
+├── package.json             (React 19, Framer Motion 12, lucide-react)
+├── src/
+│   ├── main.jsx             (React root)
+│   ├── App.jsx              (Section composition, gold progress bar)
+│   ├── index.css            (RPG design system: tokens, panels, stat-bars, rarity)
+│   ├── data/
+│   │   ├── profile.js       (RPG stats, lore, contact)
+│   │   ├── education.js     (IIT Delhi/Mandi, achievements, certs)
+│   │   ├── experience.js    (10 entries, corrected timeline)
+│   │   ├── projects.js      (18 projects with rarity system)
+│   │   ├── skills.js        (6 clusters, audited)
+│   │   └── testimonials.js  (4 LinkedIn recommendations)
+│   └── components/
+│       ├── ParticleBackground/  (Canvas magic particles)
+│       ├── Navbar/              (RPG nav: Lore/Quests/Log/Grimoire/etc)
+│       ├── Hero/                (The Summoning - rune circle portal)
+│       ├── About/               (Character Lore - stat bars)
+│       ├── Quests/              (Epic Quests - rarity cards)
+│       ├── AdventurersLog/      (Experience timeline)
+│       ├── Grimoire/            (Skills - spell schools)
+│       ├── Academies/           (Education - guild banners)
+│       ├── BardsTales/          (Testimonials - NPC dialogue)
+│       ├── Tavern/              (Contact - notice board)
+│       └── common/              (RPGPanel, SectionHeader, ScrollReveal)
+├── public/
+│   ├── assets/download/     (Resume, CV PDFs)
+│   ├── images/              (pic.jpg - unused, kept for reference)
+│   ├── favicon.svg
+│   └── icons.svg
+├── docs/
+│   ├── knowledge_graph.md
+│   ├── implementation_plan.md
+│   └── prd.md
+└── dist/                    (Build output: ~413KB, 287ms)
 ```
