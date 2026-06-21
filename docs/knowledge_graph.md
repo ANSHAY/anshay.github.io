@@ -1,7 +1,7 @@
 # Portfolio Website Knowledge Graph
 
 ## 1. Project Abstract
-Personal portfolio website for **Anshay Agarwal** — an AI R&D Engineer, Founder, and IIT Delhi/Mandi alumnus with 10+ years of experience spanning DRDO, Nvidia, GreyscaleAI, Qualcomm, and multiple founded ventures. The website overhaul aims to transform a plain Bootstrap 4.4.1 single-page site into a world-class, animated, Framer Motion-powered portfolio that positions Anshay as a top-tier research engineer and founder.
+Personal portfolio website for **Anshay Agarwal** — an AI R&D Engineer, Founder, and IIT Delhi/Mandi alumnus with 10+ years of experience spanning DRDO, Nvidia, GreyscaleAI, Qualcomm, and multiple founded ventures. The website overhaul aims to transform a plain Bootstrap 4.4.1 single-page site into a world-class, **highly creative Isekai / Fantasy RPG-themed** animated portfolio. It will position Anshay as a "Grand Magus / Level 99 Architect," wrapping his real-world achievements (AI, Neuroscience, Engineering) in an unforgettable, game-like immersive UI.
 
 ## 2. Architecture Graph
 
@@ -15,12 +15,12 @@ graph TD
         OLD --> RESUME[Resume_Anshay.pdf / CV_Anshay.pdf]
     end
 
-    subgraph "Target State - Vite + React"
+    subgraph "Target State - Fantasy RPG UI"
         VITE[Vite Dev Server] --> REACT[React 18+]
-        REACT --> FM[Framer Motion - Animations]
+        REACT --> FM[Framer Motion - Parallax/Magic]
         REACT --> ROUTER[React Router - SPA Sections]
-        REACT --> DESIGN[Material Expressive Design]
-        REACT --> THEME[Lustrous Dark Theme]
+        REACT --> DESIGN[Game UI / Parchment / Runes]
+        REACT --> THEME[Isekai RPG Theme]
     end
 ```
 
@@ -35,10 +35,10 @@ graph TD
 - **Phone**: +91-8800472674
 - **LinkedIn**: https://www.linkedin.com/in/anshayagarwal
 - **GitHub**: https://github.com/anshay
-- **LeetCode**: https://leetcode.com/anshay
+- **LeetCode**: ⚠️ REMOVE 
 - **Location**: India (based on phone number)
 - **MBTI**: INTJ-T (The Architect)
-- **Photo**: images/pic.jpg (132KB)
+- **Photo**: ⚠️ REMOVE (Using Avatar/Lore approach)
 
 ### Summary (from resume)
 > 10+ years of experience specializing in zero-to-one product builds, rapid prototyping, and architecting autonomous agentic workflows (LangGraph/LLMs). Passionate about taking complex problems and building end-to-end AI products.
@@ -46,7 +46,9 @@ graph TD
 ### Stack (from resume)
 > Chat & Voice AI Agents, RAG Pipelines, WebSockets (Real-time Audio)
 
-## 4. Career Timeline
+## 4. Career Timeline (⚠️ CRITICAL AUDIT REQUIRED)
+
+*Note: The timeline and content below currently contain inaccuracies (e.g. missing NDPL internship, wrong DRDO title/project, incorrect timings). Must be fully audited and fixed before UI implementation.*
 
 | Period | Company | Role | Key Tech | Highlights |
 |--------|---------|------|----------|------------|
@@ -61,7 +63,9 @@ graph TD
 | Aug 2013 - Jul 2015 | DRDO | Scientist | C++, MATLAB, OpenCV | Night vision thermal cameras (40km range), lens shading correction, Raspberry Pi controller |
 | May 2011 - Jul 2011 | NDPL | Intern | - | Grid operations, SCADA |
 
-## 5. Education
+## 5. Education (⚠️ CRITICAL AUDIT REQUIRED)
+
+*Note: Stream, to/from dates, and thesis details are incorrect for both IIT Delhi and IIT Mandi.*
 
 | Period | Institution | Degree | Notable |
 |--------|-------------|--------|---------|
@@ -75,7 +79,9 @@ graph TD
 - **DeepLearning.AI**: TensorFlow Professional Cert (2019-2020)
 - **DeepLearning.AI**: Deep Learning Specialization (2018-2019)
 
-## 6. Achievements
+## 6. Achievements (⚠️ CRITICAL AUDIT REQUIRED)
+*Note: GRE is incorrect, GATE is missing, JEE percentile is missing and title is wrong.*
+
 - **GATE**: AIR 423 (99.9% / 99.998 percentile in ECE)
 - **IIT JEE**: Rank 3547 (Top 1%, ~0.4M students)
 - **GRE**: 321/340 (170/170 Quantitative — perfect score)
@@ -84,6 +90,7 @@ graph TD
 - Founded Robotics Section at IIT Mandi
 
 ## 7. Projects (Comprehensive)
+*(These will be themed as "Epic Quests" or "Crafted Artifacts" in the new Fantasy RPG UI.)*
 
 ### 🔬 Research & Deep Tech
 
@@ -184,7 +191,8 @@ graph TD
 - **Autodub**: Automatic video dubbing with lip sync
 - **BCI at IIT Delhi**: EEG motor imagery cursor control
 
-## 8. Skills (Updated & Comprehensive)
+## 8. Skills (⚠️ PURGE FAKE ITEMS)
+*Note: Currently contains fluffed/fake items. Must be audited to only include strict, accurate technical arsenal.*
 
 ### Languages
 Python, C++, JavaScript, Dart
@@ -214,46 +222,38 @@ Python, C++, JavaScript, Dart
 - GPU Programming (OpenGL, CUDA)
 - Blender, Unity, MATLAB, Qt, KiCAD
 
-## 9. Design Decisions (for new website)
+## 9. Design Decisions (v2: Fantasy RPG / Isekai)
 
-### Decision 1: Tech Stack Selection
-- **React + Vite**: Since this is a GitHub Pages site, needs to be static-deployable. Vite for fast builds.
-- **Framer Motion**: User explicitly requested. For scroll animations, page transitions, micro-interactions.
-- **Material Expressive Design**: User requested. Modern Google design language with lustrous theme.
-- **Single Page App**: Sections with smooth scroll, not multi-page routing (GitHub Pages friendly).
+### Decision 1: Tech Stack & Overhaul Aesthetics
+- **React + Vite + Framer Motion**: Maintained for UI animations, but repurchased for gaming elements.
+- Abandoned the "Neural Cosmos / Dark Lustrous" theme.
+- **New Theme**: Immersive Isekai / Fantasy RPG.
+- **Goal**: Make the user feel like they are stepping into a game world. High creativity, magical elements, parchment textures, and glowing HUDs.
 
-### Decision 2: Design Philosophy
-- **Dark lustrous theme** with accent glows (think: deep space / neural network aesthetics)
-- **Scroll-driven animations** for engagement and retention
-- **Project showcase as hero content** — projects are the strongest differentiator
-- **Research + Engineering + Founder narrative** — not just a resume dump
-- Must highlight: IIT pedigree, Nvidia/Qualcomm/DRDO, breadth of AI projects, founding experience
-
-### Decision 3: Content Architecture
-Sections planned:
-1. **Hero** — Name, tagline, animated background, CTA
-2. **About** — Expert generalist narrative, photo, key stats
-3. **Experience Timeline** — Interactive animated timeline
-4. **Featured Projects** — Showcase cards with depth
-5. **Skills/Expertise** — Visual skill constellation or radar
-6. **Education & Achievements** — Academic pedigree
-7. **Contact** — Clean CTA with links
+### Decision 2: Thematic Mapping
+- **Hero** → "The Summoning / Title Screen"
+- **About** → "Character Lore / Stats"
+- **Projects** → "Epic Quests / Inventory"
+- **Experience** → "The Adventurer's Log"
+- **Skills** → "Magic Grimoire / Skill Tree"
+- **Education** → "Arcane Academies & Trials"
+- **Testimonials** → "Bards' Tales / NPC Dialogue"
+- **Contact** → "Tavern Notice Board"
 
 ## 10. Current State
-- **Phase**: Research & Planning complete
-- **Next**: Create PRD → Create Implementation Plan → Get user approval → Implement
-- **Blockers**: None — sufficient data gathered
-- **Active work streams**: PRD drafting
+- **Phase**: Data Auditing & Theme Redesign (v2)
+- **Status**: Halted implementation of old theme.
+- **Next**: Fix all factual inaccuracies in data files (`education.js`, `experience.js`, `skills.js`, etc.) before building the Fantasy RPG UI.
+- **Formatting**: Must fix incorrect usage of em dashes across all data.
 
-## 11. LinkedIn Testimonials (from public profile - 4 total, 2 visible)
+## 11. LinkedIn Testimonials (⚠️ MISSING TESTIMONIALS TO BE RESTORED)
+*(The following were included, but more exist behind auth wall that need to be restored to the codebase.)*
 
 ### Hansa Kary (GreyscaleAI colleague)
 > "It is a pleasure working with Anshay! He's friendly, adaptable, talented, hardworking, and reliable. As a consummate full stack developer, Anshay is great at planning, collaborating, and developing solutions. I feel lucky to have worked with him, and I wish him great success."
 
 ### Daniel Cannistraci (GreyscaleAI colleague)
 > "Anshay was amazing to work with. A true team player and ready to help whenever needed. I worked directly with him in bridging the gap between hardware and software. Primary focus was designing the microcontroller interface. He was always available for testing and worked diligently with the hardware team to insure that the software was properly communicating. We worked tirelessly for several months on this project and I'm proud of what was accomplished. Would love to work with Anshay again and I highly recommend him."
-
-*(2 more recommendations behind LinkedIn auth wall)*
 
 ## 12. Certifications (from LinkedIn)
 
@@ -319,22 +319,12 @@ Sections planned:
 - Article: "AI Guru - Multi-modal AI Agent for Google-Kaggle Gen-AI Capstone Project"
 - Active thought leadership on #HealthcareAI #BuildInPublic
 
-## 16. User Feedback on PRD (Decisions Made)
+## 16. User Feedback Log
 
-| Question | Decision |
-|----------|----------|
-| Profile photo | Keep current `pic.jpg` — user will replace later if needed |
-| GitHub repo links | Do NOT link repos (mostly private). EEG-to-Image, Cognitive-OS, Venom-to-Drug will go public later on a new org |
-| Phone number | REMOVE — use contact form instead |
-| Blog/Writing section | YES — include novel "The Compromise" |
-| Xern AI branding | Xern AI is the umbrella company for all projects. Reference it. |
-| Play Store links | Use tinyurl links (need to get from user) |
-| Testimonials | Use the 2 public LinkedIn recommendations |
-| Domain | Stay on `anshay.github.io` (GitHub Pages) |
-| Analytics | No Google Analytics |
-| Project exclusions | None excluded, but prioritize by category: Research > AI Agents > Health-Tech > Consumer Apps |
-| Specializations | REMOVE Self Driving Cars and Robotics (incomplete, only partial courses) |
-| Certifications to KEEP | Entrepreneurship (Wharton), TensorFlow (DeepLearning.AI), Deep Learning (DeepLearning.AI), Google Gen AI, Neuroscience courses |
+| Iteration | Feedback / Decisions |
+|-----------|----------------------|
+| **v1** | Keep photo, remove phone number, use tinyurl for apps, include novel, no Google Analytics, remove robotics/self-driving certs. |
+| **v2** | UI is uncreative/childish. **Pivot to Isekai/Fantasy RPG theme.** Remove photo. Remove LeetCode. Massive data inaccuracies reported across education, experience, achievements, and skills. Implementation halted to fix data first. |
 
 ## 17. File Structure (Current)
 ```
