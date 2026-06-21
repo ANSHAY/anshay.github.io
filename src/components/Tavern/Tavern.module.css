@@ -1,0 +1,125 @@
+.tavern {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Notice Board === */
+.tavern__board {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-2xl);
+  text-align: center;
+}
+
+/* Notice text */
+.tavern__notice {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-2xl);
+}
+
+.tavern__notice-highlight {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* === Contact Links === */
+.tavern__links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.tavern__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 14px 28px;
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.tavern__link:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.06);
+  box-shadow: var(--shadow-glow-gold);
+  transform: translateY(-2px);
+  text-shadow: none;
+}
+
+.tavern__link-icon {
+  font-size: 1.3em;
+}
+
+/* === Resume Download === */
+.tavern__downloads {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.tavern__download {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+}
+
+/* === Closing Rune === */
+.tavern__rune {
+  font-family: var(--font-accent);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  letter-spacing: 0.2em;
+  margin-top: var(--space-2xl);
+  opacity: 0.5;
+}
+
+/* === Footer === */
+.tavern__footer {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(201, 168, 76, 0.08);
+  text-align: center;
+}
+
+.tavern__footer-text {
+  font-family: var(--font-accent);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.tavern__footer-name {
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .tavern__links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tavern__link {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
