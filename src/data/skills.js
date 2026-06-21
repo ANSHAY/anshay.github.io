@@ -1,5 +1,6 @@
 /**
  * Skills grouped by domain cluster.
+ * Audited against knowledge graph (2026-06-21).
  */
 export const skillClusters = [
   {
@@ -19,17 +20,14 @@ export const skillClusters = [
     id: 'languages',
     title: 'Languages',
     color: 'cyan',
-    skills: [
-      'Python', 'Dart', 'JavaScript', 'C/C++',
-      'MATLAB', 'R', 'SQL', 'HTML/CSS',
-    ],
+    skills: ['Python', 'Dart', 'JavaScript', 'C/C++', 'MATLAB', 'SQL', 'HTML/CSS'],
   },
   {
     id: 'mobile-frontend',
     title: 'Mobile & Frontend',
     color: 'amber',
     skills: [
-      'Flutter', 'React', 'Material Design 3',
+      'Flutter', 'React', 'React Native',
       'Framer Motion', 'Responsive Design',
       'Android', 'iOS', 'Play Store Publishing',
     ],
@@ -40,9 +38,9 @@ export const skillClusters = [
     color: 'emerald',
     skills: [
       'FastAPI', 'Node.js', 'Supabase', 'Firebase',
-      'PostgreSQL', 'SQLite', 'REST APIs', 'gRPC',
+      'PostgreSQL', 'SQLite', 'Vector DBs', 'REST APIs',
       'Docker', 'Linux', 'Git', 'CI/CD',
-      'GitHub Actions', 'Cloud Deploy',
+      'GitHub Actions', 'Google Cloud Run',
     ],
   },
   {
@@ -53,17 +51,14 @@ export const skillClusters = [
       'GPU Programming', 'CUDA', 'OpenGL',
       'Embedded Systems', 'Arduino', 'ROS',
       'PCB Design', 'KiCAD', 'SoC',
-      'Linux Kernel', 'Driver Development',
+      'Linux Kernel', 'Camera ISP',
     ],
   },
   {
     id: 'tools',
     title: 'Tools & Creative',
     color: 'cyan',
-    skills: [
-      'Obsidian', 'Blender', 'Unity',
-      'Figma', 'Qt', 'CMake',
-    ],
+    skills: ['Obsidian', 'Blender', 'Unity', 'Figma', 'Qt', 'CMake'],
   },
 ];
 
