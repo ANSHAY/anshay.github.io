@@ -253,11 +253,11 @@ Python, C++, JavaScript, Dart
 - **Contact** → "Join the Party" (tavern notice board, 'Send a Raven')
 
 ## 10. Current State
-- **Phase**: Implementation Complete (Phase 4)
-- **Status**: All 8 sections implemented with Fantasy RPG theme.
+- **Phase**: Implementation Complete (Phase 4) + CI Bug Fix
+- **Status**: All 8 sections implemented with Fantasy RPG theme. Fixed Github Actions `npm ci` failure caused by cross-platform lockfile inconsistencies related to `@emnapi/core`.
 - **Branch**: `fantasy_build` (12 commits)
 - **Build**: Clean (287ms, 0 ESLint errors)
-- **Next**: Visual QA in browser, then merge to main.
+- **Next**: Commit updated `package-lock.json`, Visual QA in browser, then merge to main.
 
 ## 11. LinkedIn Testimonials (⚠️ MISSING TESTIMONIALS TO BE RESTORED)
 *(The following were included, but more exist behind auth wall that need to be restored to the codebase.)*
