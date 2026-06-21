@@ -1,129 +1,111 @@
-import { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
-import { Download } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Navbar.module.css';
 
+/**
+ * RPG-themed navigation bar.
+ *
+ * Features:
+ *  - Cinzel Decorative brand mark
+ *  - MedievalSharp section links with RPG names
+ *  - Glass backdrop effect on scroll
+ *  - Mobile hamburger menu with animated drawer
+ */
+
 const NAV_ITEMS = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Education', href: '#education' },
-  { label: 'Contact', href: '#contact' },
+  { id: 'about', label: 'Lore' },
+  { id: 'projects', label: 'Quests' },
+  { id: 'experience', label: 'Log' },
+  { id: 'skills', label: 'Grimoire' },
+  { id: 'education', label: 'Academies' },
+  { id: 'testimonials', label: 'Bards' },
+  { id: 'contact', label: 'Tavern' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  /* Scroll-spy */
-  useEffect(() => {
-    const sectionIds = NAV_ITEMS.map((item) => item.href.slice(1));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { rootMargin: '-40% 0px -55% 0px' }
-    );
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const handleLinkClick = useCallback(() => {
-    setDrawerOpen(false);
-  }, []);
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      setDrawerOpen(false);
+    }
+  };
 
   return (
-    <>
-      <motion.nav
-        className={`${styles.nav} ${scrolled ? styles['nav--scrolled'] : ''}`}
-        initial={{ y: -80 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <div className={styles.nav__inner}>
-          <a href="#hero" className={styles.nav__logo}>
-            Anshay Agarwal
-          </a>
+    <nav
+      className={`${styles.nav} ${scrolled ? styles['nav--scrolled'] : ''}`}
+      aria-label="Main navigation"
+    >
+      <div className={styles.nav__inner}>
+        <a
+          href="#hero"
+          className={styles.nav__brand}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          ✦ Anshay
+        </a>
 
-          <div className={styles.nav__links}>
+        {/* Desktop Links */}
+        <div className={styles.nav__links}>
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              className={styles.nav__link}
+              onClick={() => scrollTo(item.id)}
+              aria-label={`Navigate to ${item.label}`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Toggle */}
+        <button
+          className={styles.nav__toggle}
+          onClick={() => setDrawerOpen(!drawerOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={drawerOpen}
+        >
+          {drawerOpen ? '✕' : '☰'}
+        </button>
+      </div>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {drawerOpen && (
+          <motion.div
+            className={styles.nav__drawer}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
             {NAV_ITEMS.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className={`${styles.nav__link} ${
-                  activeSection === item.href.slice(1) ? styles['nav__link--active'] : ''
-                }`}
+              <button
+                key={item.id}
+                className={styles.nav__link}
+                onClick={() => scrollTo(item.id)}
               >
                 {item.label}
-              </a>
+              </button>
             ))}
-            <a
-              href="/assets/download/Resume_Anshay.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.nav__cta}
-            >
-              <Download size={14} />
-              Resume
-            </a>
-          </div>
-
-          <button
-            className={`${styles.nav__hamburger} ${
-              drawerOpen ? styles['nav__hamburger--open'] : ''
-            }`}
-            onClick={() => setDrawerOpen(!drawerOpen)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={drawerOpen}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-        </div>
-      </motion.nav>
-
-      {/* Mobile drawer */}
-      <div
-        className={`${styles.nav__drawer} ${
-          drawerOpen ? styles['nav__drawer--open'] : ''
-        }`}
-      >
-        {NAV_ITEMS.map((item) => (
-          <a
-            key={item.href}
-            href={item.href}
-            className={styles.nav__link}
-            onClick={handleLinkClick}
-          >
-            {item.label}
-          </a>
-        ))}
-        <a
-          href="/assets/download/Resume_Anshay.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.nav__cta}
-          onClick={handleLinkClick}
-        >
-          <Download size={16} />
-          Resume
-        </a>
-      </div>
-    </>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 }

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react';
-import styles from './MagicParticles.module.css';
+import styles from './ParticleBackground.module.css';
 
 /**
  * Enchanted particle background — floating magical motes, faint runes,
