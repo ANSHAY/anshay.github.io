@@ -53,6 +53,7 @@ export const skillClusters = [
       'Embedded Systems', 'Arduino', 'ROS',
       'PCB Design', 'KiCAD', 'SoC',
       'Linux Kernel', 'Camera ISP',
+      'Wayland', 'D-Bus', 'Linux Desktop Apps',
     ],
   },
   {

@@ -168,6 +168,19 @@ graph TD
 - **Marketing**: Instagram reels, LinkedIn
 - **Repo**: /run/media/xarc/Git/Github/bcbr
 
+### 🖥️ Desktop & Linux
+
+#### RestifEye — Situation-Aware Break Reminders (added 2026-08-15)
+- **Type**: Linux-first (Fedora Tier-1) break-reminder and digital-wellbeing desktop app; free, source-available (PolyForm Shield 1.0.0)
+- **Stack**: Flutter/Material 3, Riverpod 3, drift (SQLite), `dbus` package, window_manager, fl_chart — verified against `pubspec.yaml` v0.1.9+10
+- **Differentiators**: meeting deferral (mic/camera via PipeWire + DND via gsettings, capped at 15 min), media/presentation pause via idle inhibitors, natural-break credit (idle/lock/suspend), 30-second pre-break warning, per-cycle snooze and skip budgets, work-hours windows that cross midnight
+- **Content**: 52 exercises drawn in code (10 eye, 42 movement) across 3 intensity tiers; 7-mood expressive tray face rendered at runtime at 5 panel sizes over a hand-rolled StatusNotifierItem D-Bus tray
+- **Analytics**: fully local, 1-second slice resolution → daily rollups with a 24-slot hourly profile; rest score /100 over 4 weighted components; weekday × hour heatmap; capped rule-based advice
+- **Numbers**: 232 automated tests, `flutter analyze --fatal-infos` clean, zero network calls except an optional weekly update check, zero runtime deps in the AppImage
+- **Links**: site https://xern-ai.github.io/RestifEye/ · GitHub https://github.com/Xern-AI/RestifEye · Discord https://discord.gg/sXVwRSqhaj · X https://x.com/Xern_AI (Discord and X are the shared Xern AI handles for all apps)
+- **Site placement**: `desktop` category ("Desktop & Linux" filter tab), priority 3, rarity `rare`, icon at `public/images/restifeye.png` (copied from the app's 512px Linux icon)
+- **Repo**: /run/media/xarc/Git/Github/restifeye (source of truth: `docs/capability_sheet.md`, `docs/knowledge_graph.md`)
+
 ### 🛠️ Other Notable Projects
 
 #### Calox - AI Personal Analytics
@@ -252,11 +265,18 @@ Python, C++, JavaScript, Dart
 - **Testimonials** → "Bards' Tales" (NPC dialogue boxes)
 - **Contact** → "Join the Party" (tavern notice board, 'Send a Raven')
 
+### Decision 4: Quest card schema is additive, never forked (2026-08-15, RestifEye)
+- RestifEye ships four destinations (site, GitHub, and the Discord/X handles shared across every Xern AI app) against a card built for one `link`. Two optional fields were added to `projects.js` rather than a second card component: `icon` (path under `/public`) and `links: [{ label, url }]`.
+- `links` **takes precedence over** `link` when present; every project without either field renders byte-identically to before, so nothing regresses and the single-link "View Quest →" affordance survives untouched.
+- `link` is deliberately kept alongside `links` on RestifEye as the canonical destination, so any future consumer that reads only `link` still resolves.
+- The link row is a `<ul>` of real anchors — keyboard-reachable in order, each labelled `"<title> on <label>"` for screen readers, since "X" and "Site" say nothing out of context.
+- Two fixes came out of rendering the card headless rather than reasoning about it: the footer needed `flex-wrap` (four chips overflow a 320 px card) and the global `.rarity-badge` needed `flex-shrink: 0` inside the header (the icon plus a two-line subtitle squeezed the pill into an ellipse). The badge fix hardens every card, not just this one.
+
 ## 10. Current State
-- **Phase**: Implementation Complete (Phase 4) + CI Bug Fix
-- **Status**: All 8 sections implemented with Fantasy RPG theme. Fixed Github Actions `npm ci` failure caused by cross-platform lockfile inconsistencies related to `@emnapi/core`.
+- **Phase**: Implementation Complete (Phase 4) + CI Bug Fix + RestifEye added (2026-08-15)
+- **Status**: All 8 sections implemented with Fantasy RPG theme. Fixed Github Actions `npm ci` failure caused by cross-platform lockfile inconsistencies related to `@emnapi/core`. Quest board now carries 16 projects across 5 category filters (added "Desktop & Linux" for RestifEye).
 - **Branch**: `fantasy_build` (12 commits)
-- **Build**: Clean (287ms, 0 ESLint errors)
+- **Build**: Clean (0 ESLint errors), visually verified headless
 - **Next**: Commit updated `package-lock.json`, Visual QA in browser, then merge to main.
 
 ## 11. LinkedIn Testimonials (⚠️ MISSING TESTIMONIALS TO BE RESTORED)
@@ -353,7 +373,7 @@ anshay.github.io/
 │   │   ├── profile.js       (RPG stats, lore, contact)
 │   │   ├── education.js     (IIT Delhi/Mandi, achievements, certs)
 │   │   ├── experience.js    (10 entries, corrected timeline)
-│   │   ├── projects.js      (18 projects with rarity system)
+│   │   ├── projects.js      (16 projects, rarity system, 5 categories, optional icon/links)
 │   │   ├── skills.js        (6 clusters, audited)
 │   │   └── testimonials.js  (4 LinkedIn recommendations)
 │   └── components/
@@ -370,7 +390,7 @@ anshay.github.io/
 │       └── common/              (RPGPanel, SectionHeader, ScrollReveal)
 ├── public/
 │   ├── assets/download/     (Resume, CV PDFs)
-│   ├── images/              (pic.jpg - unused, kept for reference)
+│   ├── images/              (pic.jpg - unused; restifeye.png - RestifEye card icon)
 │   ├── favicon.svg
 │   └── icons.svg
 ├── docs/

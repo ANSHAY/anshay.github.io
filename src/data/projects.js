@@ -1,6 +1,6 @@
 /**
  * Project data module.
- * Categories: research | agents | healthtech | consumer
+ * Categories: research | agents | healthtech | consumer | desktop
  * Priority: 1 (featured spotlight) → 2 (grid highlight) → 3 (standard)
  *
  * Rarity system for RPG theme:
@@ -17,6 +17,7 @@ const CATEGORIES = {
   AGENTS: 'agents',
   HEALTHTECH: 'healthtech',
   CONSUMER: 'consumer',
+  DESKTOP: 'desktop',
 };
 
 export const categoryLabels = {
@@ -25,6 +26,7 @@ export const categoryLabels = {
   agents: 'AI Agents',
   healthtech: 'Health-Tech',
   consumer: 'Consumer Apps',
+  desktop: 'Desktop & Linux',
 };
 
 export const projects = [
@@ -187,6 +189,27 @@ export const projects = [
   },
 
   /* ── Priority 3 ── */
+  {
+    id: 'restifeye',
+    title: 'RestifEye',
+    subtitle: 'Break Reminders That Read the Room',
+    description:
+      'Linux-first wellbeing app with situation-aware scheduling: defers for meetings (mic, camera, DND), holds through video and presentations, and credits breaks you already took by walking away. 52 exercises drawn in code, a 7-mood expressive tray face, and fully local screen-time analytics.',
+    category: CATEGORIES.DESKTOP,
+    priority: 3,
+    rarity: 'rare',
+    icon: '/images/restifeye.png',
+    stack: ['Flutter', 'Riverpod 3', 'Drift/SQLite', 'D-Bus', 'Wayland', 'PipeWire'],
+    metrics: '232 tests · 52 exercises · Zero telemetry · AppImage with no runtime deps',
+    link: 'https://xern-ai.github.io/RestifEye/',
+    links: [
+      { label: 'Site', url: 'https://xern-ai.github.io/RestifEye/' },
+      { label: 'GitHub', url: 'https://github.com/Xern-AI/RestifEye' },
+      { label: 'Discord', url: 'https://discord.gg/sXVwRSqhaj' },
+      { label: 'X', url: 'https://x.com/Xern_AI' },
+    ],
+    company: 'Xern AI',
+  },
   {
     id: 'bci-iitd',
     title: 'Motor Imagery BCI',

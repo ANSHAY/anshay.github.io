@@ -34,9 +34,22 @@ function QuestCard({ project, index }) {
     >
       {/* Header */}
       <div className={styles['quest-card__header']}>
-        <div>
-          <h3 className={styles['quest-card__title']}>{project.title}</h3>
-          <p className={styles['quest-card__subtitle']}>{project.subtitle}</p>
+        <div className={styles['quest-card__identity']}>
+          {project.icon && (
+            <img
+              className={styles['quest-card__icon']}
+              src={project.icon}
+              alt=""
+              width="44"
+              height="44"
+              loading="lazy"
+              decoding="async"
+            />
+          )}
+          <div>
+            <h3 className={styles['quest-card__title']}>{project.title}</h3>
+            <p className={styles['quest-card__subtitle']}>{project.subtitle}</p>
+          </div>
         </div>
         <span className={`rarity-badge rarity-badge--${project.rarity || 'common'}`}>
           {RARITY_LABELS[project.rarity] || 'Common'}
@@ -63,16 +76,34 @@ function QuestCard({ project, index }) {
       {/* Footer */}
       <div className={styles['quest-card__footer']}>
         <span className={styles['quest-card__guild']}>{project.company}</span>
-        {project.link && (
-          <a
-            href={project.link}
-            className={styles['quest-card__link']}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${project.title}`}
-          >
-            View Quest →
-          </a>
+        {project.links?.length ? (
+          <ul className={styles['quest-card__links']}>
+            {project.links.map(({ label, url }) => (
+              <li key={label}>
+                <a
+                  href={url}
+                  className={`${styles['quest-card__link']} ${styles['quest-card__link--compact']}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.title} on ${label}`}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          project.link && (
+            <a
+              href={project.link}
+              className={styles['quest-card__link']}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title}`}
+            >
+              View Quest →
+            </a>
+          )
         )}
       </div>
     </motion.article>
