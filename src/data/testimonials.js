@@ -42,6 +42,17 @@ export const testimonials = [
     linkedinUrl: 'https://www.linkedin.com/in/anshayagarwal',
     date: 'October 2022',
   },
+  {
+    id: 'chakraborty',
+    name: 'Dr. Aniruddha Chakraborty',
+    role: 'Associate Professor, School of Basic Sciences',
+    company: 'IIT Mandi',
+    quote:
+      'He took two elective courses (Molecular Spectroscopy & Nanoscience) offered by me and he secured highest marks in all quizzes as well in final examination. Still I kept his final answer sheets with me for showing to future students taking the same course. In my approx. a decade of teaching career I have not seen any engineering student who can come close to him in terms of \u2018understanding\u2019 any subject or topic.',
+    letterUrl: '/assets/download/Anshay_LOR_Dr_Chakraborty.pdf',
+    letterLabel: 'Read the full letter',
+    date: 'September 2018',
+  },
 ];
 
 export default testimonials;

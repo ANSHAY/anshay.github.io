@@ -109,6 +109,27 @@
   opacity: 0.5;
 }
 
+.dialogue__letter {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  color: var(--gold);
+  padding: 4px 12px;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dialogue__letter:hover {
+  background: rgba(201, 168, 76, 0.1);
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.2);
+  color: var(--gold-bright);
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
   .bards__grid {

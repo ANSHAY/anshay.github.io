@@ -78,6 +78,50 @@
   background: rgba(201, 168, 76, 0.08);
 }
 
+/* Studio Button */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.nav__studio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  border: 1px solid var(--border-gold);
+  border-radius: 999px;
+  background: rgba(201, 168, 76, 0.06);
+  font-family: var(--font-heading);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.nav__studio:hover {
+  color: var(--gold-bright);
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.14);
+  box-shadow: 0 0 16px rgba(201, 168, 76, 0.22);
+}
+
+.nav__studio-mark {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(93, 199, 255, 0.45));
+  transition: transform var(--transition-base);
+}
+
+.nav__studio:hover .nav__studio-mark {
+  transform: rotate(90deg);
+}
+
 /* Mobile Menu Toggle */
 .nav__toggle {
   display: none;
@@ -104,6 +148,15 @@
 
   .nav__toggle {
     display: block;
+  }
+
+  .nav__studio {
+    padding: 5px 10px 5px 6px;
+    letter-spacing: 0.08em;
+  }
+
+  .nav__studio-label {
+    display: none;
   }
 
   .nav__drawer {

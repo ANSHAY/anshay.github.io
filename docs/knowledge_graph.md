@@ -272,9 +272,20 @@ Python, C++, JavaScript, Dart
 - The link row is a `<ul>` of real anchors — keyboard-reachable in order, each labelled `"<title> on <label>"` for screen readers, since "X" and "Site" say nothing out of context.
 - Two fixes came out of rendering the card headless rather than reasoning about it: the footer needed `flex-wrap` (four chips overflow a 320 px card) and the global `.rarity-badge` needed `flex-shrink: 0` inside the header (the icon plus a two-line subtitle squeezed the pill into an ellipse). The badge fix hardens every card, not just this one.
 
+### Decision 5: Written letters live beside LinkedIn quotes (2026-08-28, Dr. Chakraborty LOR)
+- The letter of recommendation from Dr. Aniruddha Chakraborty (IIT Mandi) is a PDF, not a LinkedIn post, so the card carries two optional fields instead of a new component: `letterUrl` (path under `/public/assets/download`) and `letterLabel`.
+- Same additive rule as Decision 4 — a testimonial without `letterUrl` renders exactly as before. The link reuses the quest-card chip styling so the two sections stay visually consistent.
+- The quote on the card is an excerpt; the full signed letter opens in a new tab, which is what a recruiter actually wants to verify.
+
+### Decision 6: The studio lives in the Log, not the Quest board (2026-08-28, Xern AI site)
+- The Xern AI website is not a project of mine to sit beside the apps — it is the guild those apps belong to. It attaches to the existing Xern AI entry in the Adventurer's Log instead of becoming an 18th quest card.
+- Two optional experience fields, same additive rule as Decisions 4 and 5: `logo` (path under `/public`) and `site: { label, url }`. Every other employer entry renders unchanged.
+- A persistent nav button (`nav__studio`) sits top-right, outside the collapsible link list, so it survives the mobile breakpoint. Below 768px the label hides and the mark alone remains, keeping the hamburger reachable.
+- The mark was cut from `artifacts/xernai_logo.png` in the xernai repo with the wordmark removed. The art is a glow on black, so alpha was derived from luminance rather than keyed on a colour — that gives clean transparency over any nav background, and it is why the mark needs no plate behind it.
+
 ## 10. Current State
-- **Phase**: Implementation Complete (Phase 4) + CI Bug Fix + RestifEye added (2026-08-15)
-- **Status**: All 8 sections implemented with Fantasy RPG theme. Fixed Github Actions `npm ci` failure caused by cross-platform lockfile inconsistencies related to `@emnapi/core`. Quest board now carries 16 projects across 5 category filters (added "Desktop & Linux" for RestifEye).
+- **Phase**: Implementation Complete (Phase 4) + CI Bug Fix + RestifEye added (2026-08-15) + Tessera, LifeXP and the IIT Mandi LOR added (2026-08-28)
+- **Status**: All 8 sections implemented with Fantasy RPG theme. Fixed Github Actions `npm ci` failure caused by cross-platform lockfile inconsistencies related to `@emnapi/core`. Quest board now carries 18 projects across 5 category filters (Tessera and LifeXP joined "Consumer Apps" at priority 2, both with icons and link rows). Bards' Tales carries 5 testimonials, the fifth being a downloadable letter. The Xern AI log entry now carries the studio mark and a link to the studio site, and the navbar carries a persistent Xern AI button top-right.
 - **Branch**: `fantasy_build` (12 commits)
 - **Build**: Clean (0 ESLint errors), visually verified headless
 - **Next**: Commit updated `package-lock.json`, Visual QA in browser, then merge to main.
@@ -373,9 +384,10 @@ anshay.github.io/
 │   │   ├── profile.js       (RPG stats, lore, contact)
 │   │   ├── education.js     (IIT Delhi/Mandi, achievements, certs)
 │   │   ├── experience.js    (10 entries, corrected timeline)
-│   │   ├── projects.js      (16 projects, rarity system, 5 categories, optional icon/links)
+│   │   ├── projects.js      (18 projects, rarity system, 5 categories, optional icon/links)
+│   │   ├── experience.js    (guild timeline, optional logo/site per entry)
 │   │   ├── skills.js        (6 clusters, audited)
-│   │   └── testimonials.js  (4 LinkedIn recommendations)
+│   │   └── testimonials.js  (4 LinkedIn recommendations + 1 PDF letter of recommendation)
 │   └── components/
 │       ├── ParticleBackground/  (Canvas magic particles)
 │       ├── Navbar/              (RPG nav: Lore/Quests/Log/Grimoire/etc)

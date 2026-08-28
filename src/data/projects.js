@@ -132,6 +132,43 @@ export const projects = [
     company: 'Xern AI',
   },
   {
+    id: 'tessera',
+    title: 'Tessera',
+    subtitle: 'Ad-Free Daily Logic Puzzles',
+    description:
+      'Four original logic games in one app: Astra (star-battle), Eclipse (binary), Orbit (path) and Sudoku. A fresh daily set for every game, streaks, and 300 hand-graded levels. Every puzzle is proven to have exactly one solution before it ships, mistakes cost nothing, and the only thing on sale is gems.',
+    category: CATEGORIES.CONSUMER,
+    priority: 2,
+    rarity: 'epic',
+    icon: '/images/tessera.png',
+    stack: ['Flutter', 'Dart', 'Drift/SQLite', 'Supabase', 'RevenueCat', 'Firebase'],
+    metrics: '4 games \u00b7 300 CI-verified levels \u00b7 769 tests \u00b7 WCAG AA on every commit \u00b7 Zero ads',
+    link: 'https://play.google.com/store/apps/details?id=com.xernai.tessera',
+    links: [
+      { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.xernai.tessera' },
+      { label: 'Site', url: 'https://xernai.lovable.app/app/tessera' },
+    ],
+    company: 'Xern AI',
+  },
+  {
+    id: 'lifexp',
+    title: 'LifeXP',
+    subtitle: 'Turn Your Life Into an RPG',
+    description:
+      'A real-life role-playing game: finish real-world experiences, earn XP per class, and climb from rank E to SSS. Nothing repeats, so it is not a habit tracker. It suggests what is actually reachable from any of 34,000 cities, and all XP is awarded by the server so progress cannot be forged.',
+    category: CATEGORIES.CONSUMER,
+    priority: 2,
+    rarity: 'epic',
+    icon: '/images/lifexp.svg',
+    stack: ['Next.js 16', 'Flutter', 'Supabase', 'Postgres RLS', 'PostHog', 'FCM'],
+    metrics: '275 quests \u00b7 34,000 cities \u00b7 8 ranks E\u2192SSS \u00b7 29 titles \u00b7 Web PWA + Android',
+    link: 'https://xernai.lovable.app/app/lifexp',
+    links: [
+      { label: 'Site', url: 'https://xernai.lovable.app/app/lifexp' },
+    ],
+    company: 'Xern AI',
+  },
+  {
     id: 'calox',
     title: 'Calox',
     subtitle: 'AI Personal Analytics',

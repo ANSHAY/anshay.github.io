@@ -92,10 +92,12 @@ export const experience = [
     type: 'founder',
     highlights: [
       'Founded AI product studio building across healthcare, neuroscience, and consumer tech',
-      'Shipped 5+ apps to production: Vitalis (health screening), Praan (spiritual app), PipeMaster',
+      'Studio of 9 products across health, spirituality, games, productivity and desktop: Vitalis, Praan, Tessera, LifeXP, RestifEye, BCBR, PipeMaster, ConduitPro, Zenitsu',
       'Pioneered BCI research, Autodub (video dubbing with lip sync), and multi-modal AI products',
     ],
     tech: ['Flutter', 'Python', 'Gemini', 'LangGraph', 'FastAPI', 'Supabase'],
+    logo: '/images/xernai-mark.png',
+    site: { label: 'Visit the studio', url: 'https://xernai.lovable.app/' },
   },
   {
     id: 'nvidia',

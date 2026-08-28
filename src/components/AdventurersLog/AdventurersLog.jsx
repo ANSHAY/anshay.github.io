@@ -43,6 +43,16 @@ export default function AdventurersLog() {
                 {/* Entry Card */}
                 <RPGPanel className={styles.log__card}>
                   <div className={styles['log__card-header']}>
+                    {exp.logo && (
+                      <img
+                        className={styles.log__logo}
+                        src={exp.logo}
+                        alt=""
+                        width="44"
+                        height="44"
+                        loading="lazy"
+                      />
+                    )}
                     <div>
                       <h3 className={styles['log__guild-name']}>
                         {exp.company}
@@ -67,6 +77,18 @@ export default function AdventurersLog() {
                       </span>
                     ))}
                   </div>
+
+                  {exp.site && (
+                    <a
+                      className={styles.log__site}
+                      href={exp.site.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${exp.company} website`}
+                    >
+                      {exp.site.label} →
+                    </a>
+                  )}
                 </RPGPanel>
               </div>
             </ScrollReveal>

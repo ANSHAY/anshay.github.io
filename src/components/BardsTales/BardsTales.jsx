@@ -54,6 +54,17 @@ export default function BardsTales() {
                   </div>
                   <span className={styles.dialogue__date}>{t.date}</span>
                 </div>
+
+                {t.letterUrl && (
+                  <a
+                    href={t.letterUrl}
+                    className={styles.dialogue__letter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ✉ {t.letterLabel || 'Read the full letter'}
+                  </a>
+                )}
               </RPGPanel>
             </ScrollReveal>
           ))}

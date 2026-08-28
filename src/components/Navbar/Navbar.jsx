@@ -22,6 +22,8 @@ const NAV_ITEMS = [
   { id: 'contact', label: 'Tavern' },
 ];
 
+const XERN_AI_URL = 'https://xernai.lovable.app/';
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -73,15 +75,34 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className={styles.nav__toggle}
-          onClick={() => setDrawerOpen(!drawerOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={drawerOpen}
-        >
-          {drawerOpen ? '✕' : '☰'}
-        </button>
+        <div className={styles.nav__actions}>
+          <a
+            className={styles.nav__studio}
+            href={XERN_AI_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Xern AI, opens in a new tab"
+          >
+            <img
+              className={styles['nav__studio-mark']}
+              src="/images/xernai-mark.png"
+              alt=""
+              width="24"
+              height="24"
+            />
+            <span className={styles['nav__studio-label']}>Xern AI</span>
+          </a>
+
+          {/* Mobile Toggle */}
+          <button
+            className={styles.nav__toggle}
+            onClick={() => setDrawerOpen(!drawerOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={drawerOpen}
+          >
+            {drawerOpen ? '✕' : '☰'}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
