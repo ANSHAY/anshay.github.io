@@ -158,7 +158,7 @@ graph TD
 - **Stack**: Flutter, RevenueCat, subscriptions
 - **Monetization**: Monthly $14.99, Quarterly $39.99, Lifetime $119.99
 - **Features**: Exam prep, tools, cheat sheets, video content
-- **Website**: https://xernai.lovable.app/app/pipemaster
+- **Website**: https://xernaitech.com/app/pipemaster
 - **Repo**: /run/media/xarc/Git/Github/niche_apps/plumber_code
 
 #### BCBR (Basic Course in Biomedical Research)

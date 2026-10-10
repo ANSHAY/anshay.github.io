@@ -146,7 +146,7 @@ export const projects = [
     link: 'https://play.google.com/store/apps/details?id=com.xernai.tessera',
     links: [
       { label: 'Play Store', url: 'https://play.google.com/store/apps/details?id=com.xernai.tessera' },
-      { label: 'Site', url: 'https://xernai.lovable.app/app/tessera' },
+      { label: 'Site', url: 'https://xernaitech.com/app/tessera' },
     ],
     company: 'Xern AI',
   },
@@ -162,9 +162,9 @@ export const projects = [
     icon: '/images/lifexp.svg',
     stack: ['Next.js 16', 'Flutter', 'Supabase', 'Postgres RLS', 'PostHog', 'FCM'],
     metrics: '275 quests \u00b7 34,000 cities \u00b7 8 ranks E\u2192SSS \u00b7 29 titles \u00b7 Web PWA + Android',
-    link: 'https://xernai.lovable.app/app/lifexp',
+    link: 'https://xernaitech.com/app/lifexp',
     links: [
-      { label: 'Site', url: 'https://xernai.lovable.app/app/lifexp' },
+      { label: 'Site', url: 'https://xernaitech.com/app/lifexp' },
     ],
     company: 'Xern AI',
   },

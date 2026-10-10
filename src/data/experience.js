@@ -97,7 +97,7 @@ export const experience = [
     ],
     tech: ['Flutter', 'Python', 'Gemini', 'LangGraph', 'FastAPI', 'Supabase'],
     logo: '/images/xernai-mark.png',
-    site: { label: 'Visit the studio', url: 'https://xernai.lovable.app/' },
+    site: { label: 'Visit the studio', url: 'https://xernaitech.com/' },
   },
   {
     id: 'nvidia',

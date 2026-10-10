@@ -22,7 +22,7 @@ const NAV_ITEMS = [
   { id: 'contact', label: 'Tavern' },
 ];
 
-const XERN_AI_URL = 'https://xernai.lovable.app/';
+const XERN_AI_URL = 'https://xernaitech.com/';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
